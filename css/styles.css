@@ -105,8 +105,13 @@ img, video { display: block; max-width: 100%; }
 /* 2. Hero */
 .hero { position: relative; height: 100vh; height: 100svh; min-height: 620px; background: var(--night); }
 .hero-media {
-  position: absolute; inset: 0; overflow: hidden; background: var(--night);
+  position: absolute; inset: 0; overflow: hidden;
+  background: var(--night) url("../assets/images/hero-poster.jpg") center / cover no-repeat; /* still until the video's first frame */
   animation: wipe 900ms var(--ease) both;
+}
+/* Upright phones: matches the mobile <source> media rule in index.html */
+@media (max-width: 767px) and (orientation: portrait) {
+  .hero-media { background-image: url("../assets/images/hero-mobile-poster.jpg"); }
 }
 .hero-overlay {
   position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end;
