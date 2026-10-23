@@ -106,7 +106,7 @@ img, video { display: block; max-width: 100%; }
 .hero { position: relative; height: 100vh; height: 100svh; min-height: 620px; background: var(--night); }
 .hero-media {
   position: absolute; inset: 0; overflow: hidden;
-  background: var(--night) url("../assets/images/hero-poster.jpg") center / cover no-repeat; /* still until the video's first frame */
+  background: var(--night) url("../assets/images/hero-poster-2026.jpg") center / cover no-repeat; /* still until the video's first frame */
   animation: wipe 900ms var(--ease) both;
 }
 /* Upright phones: matches the mobile <source> media rule in index.html */
@@ -174,7 +174,7 @@ img, video { display: block; max-width: 100%; }
   display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 24px;
   padding-top: 26px; border-top: 1px solid var(--rule-16);
 }
-.stat-val { font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 1; }
+.stat-val { font-family: futura-pt-bold, var(--display); font-weight: 700; font-size: 40px; line-height: 1; }
 .stat-label { font-size: 10px; letter-spacing: .02em; color: var(--ink-55); margin-top: 6px; }
 
 /* 4. Clients */
@@ -186,7 +186,7 @@ img, video { display: block; max-width: 100%; }
 .marquee { display: flex; width: max-content; animation: marquee 34s linear infinite; }
 .marquee-row {
   display: flex; gap: 40px; padding-right: 40px;
-  font-family: var(--display); font-weight: 600; font-size: clamp(28px, 4vw, 62px);
+  font-family: futura-pt-bold, var(--display); font-weight: 700; font-size: clamp(28px, 4vw, 62px);
   white-space: nowrap; color: rgba(26,23,18,.82);
 }
 .marquee-row i { font-style: normal; color: var(--accent); }
