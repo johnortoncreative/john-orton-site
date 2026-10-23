@@ -97,8 +97,8 @@ img, video { display: block; max-width: 100%; }
 }
 .site-header a { color: var(--paper); }
 .brand {
-  font-family: var(--display); font-weight: 700; font-size: 20px;
-  letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
+  font-family: neulis-sans, var(--display); font-weight: 900; font-style: italic; font-size: 20px;
+  letter-spacing: .02em; text-transform: uppercase; white-space: nowrap;
 }
 .site-nav { display: flex; gap: 22px; font-size: 12px; letter-spacing: .02em; }
 
@@ -121,8 +121,9 @@ img, video { display: block; max-width: 100%; }
     linear-gradient(to top, rgba(20,18,14,.72) 0%, rgba(20,18,14,0) 46%);
 }
 .wordmark {
-  margin: 0; font-family: var(--display); font-weight: 700;
-  font-size: clamp(64px, 15vw, 260px); line-height: .82; letter-spacing: -.01em;
+  margin: 0; font-family: neulis-sans, var(--display); font-weight: 900; font-style: italic;
+  font-size: min(calc((100vw - 2 * var(--gutter)) / 7.3), 240px); /* Neulis is wide: name + typing caret always fit on one line */
+  line-height: .82; letter-spacing: -.01em;
   color: var(--paper); text-transform: uppercase; min-height: .84em; white-space: nowrap;
 }
 .caret {
@@ -352,7 +353,6 @@ img, video { display: block; max-width: 100%; }
 
 @media (max-width: 360px) {
   .site-nav { gap: 9px; }
-  .wordmark { font-size: 17vw; }
 }
 
 /* ---------- Reduced motion ---------- */
