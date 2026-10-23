@@ -133,7 +133,7 @@ img, video { display: block; max-width: 100%; }
 .caret.done { display: none; }
 .hero-foot {
   display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
-  gap: 16px; margin-top: 18px; color: var(--paper);
+  gap: 16px; margin-top: 10px; color: var(--paper);
 }
 .subtitle {
   margin: 0; font-family: Montserrat, Archivo, sans-serif; font-weight: 700;
@@ -152,12 +152,13 @@ img, video { display: block; max-width: 100%; }
 .section-head--film { margin-bottom: 44px; }
 .section-head--stills { margin-bottom: 36px; }
 .h-big, .h-about, .h-contact {
-  margin: 0; font-family: var(--display); font-weight: 700;
+  margin: 0; font-family: futura-pt-bold, var(--display); font-weight: 700; font-style: italic; /* Futura PT Bold Oblique (Adobe Fonts) */
   text-transform: uppercase; letter-spacing: -.01em;
 }
 .h-big { font-size: clamp(40px, 8vw, 130px); line-height: .86; }
 .h-about { font-size: clamp(38px, 5vw, 78px); line-height: .9; margin-bottom: 28px; }
-.h-contact { font-size: clamp(44px, 7vw, 112px); line-height: .86; margin-bottom: 26px; }
+.h-contact { font-size: min(clamp(44px, 7vw, 112px), 100cqi / 8); line-height: .86; margin-bottom: 26px; } /* Futura is wide: stays on one line in its column */
+.contact-grid > div:first-child { container-type: inline-size; }
 .meta-dim { font-size: 11px; letter-spacing: .02em; opacity: .6; }
 .meta-muted { font-size: 11px; letter-spacing: .02em; color: var(--ink-55); }
 
