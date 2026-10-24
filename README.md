@@ -21,7 +21,7 @@ then open http://localhost:8000
 ## Adding media
 
 - **Images:** replace a `<div class="ph" ...></div>` placeholder with `<img src="assets/images/NAME.jpg" alt="...">`.
-- **Showreel:** save as `assets/videos/showreel.mp4`, poster as `assets/images/showreel-poster.jpg`.
+- **Showreel:** `assets/videos/showreel-2026.mp4` (with sound, plays on click), poster `assets/images/showreel-2026-poster.jpg`. Use a new file name for a new cut so browsers don't serve the cached one (assets are cached for 7 days).
 - **Film card clips:** replace the card's placeholder with
   `<video src="assets/videos/NAME.mp4" poster="assets/images/NAME.jpg" muted playsinline loop preload="none" data-autoplay></video>`
 

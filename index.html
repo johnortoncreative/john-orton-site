@@ -39,13 +39,10 @@
 
 <!-- 1. HERO -->
 <section id="top" class="hero">
-  <!-- Full-screen background video, silent.
-       Upright phones get the 9:16 cut of Showreel 2026; everything else gets the 16:9 full-HD cut.
-       The still shown while loading is set per screen in css (.hero-media). -->
+  <!-- Full-screen background loop, silent. One 16:9 file for every screen; phones see the centre (object-fit: cover). -->
   <div class="hero-media">
     <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-      <source src="assets/videos/hero-desktop-2026.mp4" type="video/mp4" media="(min-width: 768px), (orientation: landscape)">
-      <source src="assets/videos/hero-mobile-2026-v2.mp4" type="video/mp4">
+      <source src="assets/videos/hero-loop-2026.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-overlay">
@@ -93,12 +90,11 @@
   <div class="wrap">
     <div class="section-head">
       <h2 class="h-big" data-type>Showreel</h2>
-      <div class="mono meta-dim">2026 / 02:14</div>
+      <div class="mono meta-dim">2026 / 01:13</div>
     </div>
     <div class="player" data-reveal>
-      <!-- Showreel: drop the file at assets/videos/showreel.mp4 and a poster at assets/images/showreel-poster.jpg -->
-      <video class="reel-video" muted playsinline preload="none" poster="assets/images/showreel-poster.jpg">
-        <source src="assets/videos/showreel.mp4" type="video/mp4">
+      <video class="reel-video" muted playsinline preload="none" poster="assets/images/showreel-2026-poster.jpg">
+        <source src="assets/videos/showreel-2026.mp4" type="video/mp4">
       </video>
       <button class="play-pill mono" type="button"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play reel</span></button>
     </div>
