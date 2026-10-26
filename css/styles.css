@@ -139,7 +139,6 @@ img, video { display: block; max-width: 100%; }
 .h-about { font-size: clamp(38px, 5vw, 78px); line-height: .9; margin-bottom: 28px; }
 .h-contact { font-size: min(clamp(44px, 7vw, 112px), 100cqi / 8); line-height: .86; margin-bottom: 26px; } /* Futura is wide: stays on one line in its column */
 .contact-grid > div:first-child { container-type: inline-size; }
-.meta-dim { font-size: 11px; letter-spacing: .02em; opacity: .6; }
 .meta-muted { font-size: 11px; letter-spacing: .02em; color: var(--ink-55); }
 
 /* 3. About */
@@ -188,12 +187,6 @@ img, video { display: block; max-width: 100%; }
 .play-pill[disabled] { cursor: default; opacity: .7; }
 .play-tri { display: block; width: 0; height: 0; border-left: 11px solid var(--paper); border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
 .player.is-playing .play-pill { display: none; }
-.credits {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;
-  margin-top: 28px; font-size: 13px; line-height: 1.55; color: var(--paper-66);
-}
-.credit-label { display: block; font-size: 10px; letter-spacing: .02em; color: var(--paper-40); margin-bottom: 8px; }
-.underline { color: var(--paper); border-bottom: 1px solid rgba(239,233,222,.35); }
 
 /* 6. Film */
 .film { padding: 110px var(--gutter) 40px; }
