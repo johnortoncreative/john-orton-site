@@ -206,8 +206,7 @@ img, video { display: block; max-width: 100%; }
   display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
   margin-top: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--rule-16);
 }
-.film-title { font-family: var(--display); font-weight: 600; font-size: clamp(20px, 2vw, 30px); line-height: 1.05; }
-.film-meta { font-size: 10px; letter-spacing: .02em; color: var(--ink-55); white-space: nowrap; }
+.film-title { font-family: futura-pt-bold, var(--display); font-weight: 700; font-style: italic; font-size: clamp(20px, 2vw, 30px); line-height: 1.05; text-wrap: balance; } /* same face as the section headings, in normal case */
 
 /* 7. Stills */
 .stills { padding: 100px 0 110px; }
@@ -316,7 +315,6 @@ img, video { display: block; max-width: 100%; }
 
   .play-pill { padding: 12px 20px; gap: 10px; }
 
-  .film-cap { flex-wrap: wrap; row-gap: 4px; }
 
   .still { width: 78vw; }
 
