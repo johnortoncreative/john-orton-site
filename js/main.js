@@ -111,7 +111,53 @@
           var v = other.querySelector('video');
           if (v && v !== video && !v.paused) v.pause();
         });
+        pauseYouTube(null);
       });
+    });
+  }
+
+  /* ---------- YouTube film cards: thumbnail until Play, then the player loads in place ---------- */
+  function pauseYouTube(except) {
+    document.querySelectorAll('.film-media.yt iframe').forEach(function (f) {
+      if (f !== except) f.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    });
+  }
+
+  function youtubeCards() {
+    document.querySelectorAll('.film-media.yt').forEach(function (media) {
+      var btn = media.querySelector('.play-pill');
+      var id = media.getAttribute('data-yt');
+      if (!btn || !id) return;
+      btn.addEventListener('click', function () {
+        var title = media.parentNode.querySelector('.film-title');
+        var f = document.createElement('iframe');
+        // Nothing is requested from YouTube until Play is pressed.
+        f.src = 'https://www.youtube.com/embed/' + encodeURIComponent(id) +
+          '?autoplay=1&rel=0&playsinline=1&enablejsapi=1&origin=' + encodeURIComponent(location.origin);
+        f.title = title ? title.textContent : 'Film';
+        f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        f.allowFullscreen = true;
+        media.innerHTML = '';
+        media.appendChild(f);
+        // Only one film plays at a time.
+        document.querySelectorAll('.player video').forEach(function (v) { if (!v.paused) v.pause(); });
+        pauseYouTube(f);
+      });
+    });
+  }
+
+  /* ---------- "Show more films": only appears when .film-more has cards ---------- */
+  function moreFilms() {
+    var more = document.querySelector('.film-more');
+    var btn = document.querySelector('.more-btn');
+    if (!more || !btn || !more.children.length) return;
+    btn.hidden = false;
+    btn.addEventListener('click', function () {
+      var open = more.hidden;
+      more.hidden = !open;
+      btn.setAttribute('aria-expanded', String(open));
+      btn.textContent = open ? 'Show fewer films' : 'Show more films';
+      if (open) more.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('revealed'); });
     });
   }
 
@@ -196,6 +242,8 @@
   reveals();
   cursor();
   players();
+  youtubeCards();
+  moreFilms();
   heroVideo();
   autoplayClips();
   form();

@@ -105,37 +105,57 @@
     <div class="section-head section-head--film">
       <h2 class="h-big" data-type>Film</h2>
     </div>
-    <!-- Titles and years are placeholders. To add a clip to a card, replace the .ph div with:
-         <video src="assets/videos/film-1.mp4" poster="assets/images/film-1.jpg" muted playsinline loop preload="none" data-autoplay></video> -->
+    <!-- Films are YouTube videos (works for public and unlisted). Each card shows a local thumbnail and only loads
+         the YouTube player when Play is pressed. To add one: copy a card, set data-yt to the video ID and save its
+         thumbnail as assets/images/film-NAME.jpg (https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg).
+         Featured films go in .film-grid; extra films go in .film-more (use span-4) and the "Show more films"
+         button appears automatically. -->
     <div class="film-grid">
       <div class="film-card span-12" data-reveal>
-        <div class="film-media player">
-          <video src="assets/videos/marina-wedding-bells-bts.mp4" poster="assets/images/marina-wedding-bells-poster.jpg" playsinline preload="none"></video>
-          <button class="play-pill mono" type="button"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        <div class="film-media r-16-9 yt" data-yt="fDvy2a-fQIY">
+          <img src="assets/images/film-big-john-soho.jpg" alt="" width="1136" height="639" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Big John Takes on Soho"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
         </div>
-        <div class="film-cap"><div class="film-title">Marina &amp; The Diamonds, Wedding Bells</div></div>
+        <div class="film-cap"><div class="film-title">Big John Takes on Soho</div></div>
       </div>
-      <a href="#contact" class="film-card span-7" data-reveal>
-        <div class="film-media r-16-9"><div class="ph" data-label="Film 01, club, low light"></div></div>
-        <div class="film-cap"><div class="film-title">Late Night Disco</div></div>
-      </a>
-      <a href="#contact" class="film-card span-5" data-reveal>
-        <div class="film-media r-4-3"><div class="ph" data-label="Film 02, brand activation"></div></div>
-        <div class="film-cap"><div class="film-title">Coors Light Ice Bars</div></div>
-      </a>
-      <a href="#contact" class="film-card span-5" data-reveal>
-        <div class="film-media r-4-3"><div class="ph" data-label="Film 03, fashion film"></div></div>
-        <div class="film-cap"><div class="film-title">Hasan Hejazi SS</div></div>
-      </a>
-      <a href="#contact" class="film-card span-7" data-reveal>
-        <div class="film-media r-16-9"><div class="ph" data-label="Film 04, artist performance"></div></div>
-        <div class="film-cap"><div class="film-title">Maya Jane Coles</div></div>
-      </a>
-      <a href="#contact" class="film-card span-12" data-reveal>
-        <div class="film-media r-21-9"><div class="ph" data-label="Film 05, documentary"></div></div>
-        <div class="film-cap"><div class="film-title">Brexit &amp; Me</div></div>
-      </a>
+      <div class="film-card span-6" data-reveal>
+        <div class="film-media r-16-9 yt" data-yt="74nNKGGOTmg">
+          <img src="assets/images/film-maya-jane-coles-everything.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Maya Jane Coles – Everything | Behind the Scenes"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        </div>
+        <div class="film-cap"><div class="film-title">Maya Jane Coles – Everything | Behind the Scenes</div></div>
+      </div>
+      <div class="film-card span-6" data-reveal>
+        <div class="film-media r-16-9 yt" data-yt="wJYYM1eBbU8">
+          <img src="assets/images/film-by-rotation-mayfair.jpg" alt="" width="1136" height="639" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play By Rotation: Bringing Sustainable Fashion to Mayfair"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        </div>
+        <div class="film-cap"><div class="film-title">By Rotation: Bringing Sustainable Fashion to Mayfair</div></div>
+      </div>
+      <div class="film-card span-6" data-reveal>
+        <div class="film-media r-16-9 yt" data-yt="yYlFFuWAqlo">
+          <img src="assets/images/film-notting-hill-carnival.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Notting Hill Carnival | London&#x27;s Biggest Street Party"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        </div>
+        <div class="film-cap"><div class="film-title">Notting Hill Carnival | London&#x27;s Biggest Street Party</div></div>
+      </div>
+      <div class="film-card span-6" data-reveal>
+        <div class="film-media r-16-9 yt" data-yt="cICFgF0Q7DQ">
+          <img src="assets/images/film-their-stories.jpg" alt="" width="937" height="527" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Their Stories: Life After Violence and Abuse"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        </div>
+        <div class="film-cap"><div class="film-title">Their Stories: Life After Violence and Abuse</div></div>
+      </div>
+      <div class="film-card span-12" data-reveal>
+        <div class="film-media r-16-9 yt" data-yt="ZnfO6LvfSUQ">
+          <img src="assets/images/film-ford-mustang.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Ford Mustang Montage"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        </div>
+        <div class="film-cap"><div class="film-title">Ford Mustang Montage</div></div>
+      </div>
     </div>
+    <div class="film-grid film-more" id="film-more" hidden></div>
+    <button class="more-btn mono" type="button" aria-controls="film-more" aria-expanded="false" hidden>Show more films</button>
   </div>
 </section>
 

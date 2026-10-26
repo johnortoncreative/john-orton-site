@@ -53,7 +53,7 @@ img, video { display: block; max-width: 100%; }
 
 /* Media: placeholders + real images/videos fill their box */
 .ph, .hero-video,
-.portrait > img, .film-media > img, .film-media > video,
+.portrait > img, .film-media > img, .film-media > video, .film-media > iframe,
 .still > img, .player > video {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
 }
@@ -193,6 +193,7 @@ img, video { display: block; max-width: 100%; }
 .film-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
 .film-card { display: block; transition: opacity 200ms; }
 .film-card:hover { opacity: .88; color: inherit; }
+.span-4 { grid-column: span 4; }
 .span-5 { grid-column: span 5; }
 .span-6 { grid-column: span 6; }
 .span-7 { grid-column: span 7; }
@@ -207,6 +208,17 @@ img, video { display: block; max-width: 100%; }
   margin-top: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--rule-16);
 }
 .film-title { font-family: futura-pt-bold, var(--display); font-weight: 700; font-style: italic; font-size: clamp(20px, 2vw, 30px); line-height: 1.05; text-wrap: balance; } /* same face as the section headings, in normal case */
+/* YouTube cards: local thumbnail until Play, then the player loads in place */
+.film-media > iframe { border: 0; }
+.film-more { margin-top: 20px; }
+.film-more .film-title { font-size: clamp(18px, 1.5vw, 22px); }
+.more-btn {
+  display: block; margin: 36px auto 0; padding: 14px 26px;
+  border: 1px solid var(--rule-16); border-radius: 999px; background: none; color: inherit;
+  font-size: 11px; letter-spacing: .02em; cursor: pointer;
+}
+.more-btn:hover { border-color: currentColor; }
+.more-btn[hidden] { display: none; }
 
 /* 7. Stills */
 .stills { padding: 100px 0 110px; }
