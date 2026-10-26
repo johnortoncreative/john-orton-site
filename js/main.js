@@ -4,25 +4,6 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- Typed hero wordmark ---------- */
-  function typeWordmark() {
-    var el = document.querySelector('.wordmark-text');
-    var caret = document.querySelector('.caret');
-    if (!el) return;
-    var full = el.textContent;
-    if (reduceMotion) { caret.classList.add('done'); return; }
-    el.textContent = '';
-    var i = 0;
-    var id = setInterval(function () {
-      i++;
-      el.textContent = full.slice(0, i);
-      if (i >= full.length) {
-        clearInterval(id);
-        setTimeout(function () { caret.classList.add('done'); }, 4000);
-      }
-    }, 110);
-  }
-
   /* ---------- Typed section headings ---------- */
   function typeHeadings() {
     var heads = document.querySelectorAll('[data-type]');
@@ -211,7 +192,6 @@
     });
   }
 
-  typeWordmark();
   typeHeadings();
   reveals();
   cursor();
