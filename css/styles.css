@@ -237,12 +237,8 @@ img, video { display: block; max-width: 100%; }
 /* 8. Statement */
 .statement { padding: 110px var(--gutter) 120px; border-top: 1px solid var(--rule-14); }
 .statement-text {
-  max-width: 1180px; margin: 0 auto; font-family: var(--display); font-weight: 600;
-  font-size: clamp(30px, 4.6vw, 74px); line-height: 1.02; letter-spacing: -.005em;
-}
-.disciplines {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 28px;
-  max-width: 1180px; margin: 64px auto 0; font-size: 11px; letter-spacing: .02em; color: var(--ink-62);
+  max-width: 1180px; margin: 0 auto; font-family: futura-pt, var(--display); font-weight: 700; /* Futura PT Heavy: a touch lighter than Bold */
+  font-size: clamp(30px, 4.6vw, 74px); line-height: 1.1; letter-spacing: -.005em;
 }
 
 /* 9. Contact */
@@ -330,7 +326,6 @@ img, video { display: block; max-width: 100%; }
 
   .still { width: 78vw; }
 
-  .disciplines { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 44px; }
   .contact-email { font-size: 22px; }
   .site-footer { margin-top: 64px; flex-direction: column; gap: 10px; }
 }
