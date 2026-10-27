@@ -11,10 +11,13 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/nwr5zve.css"><!-- Adobe Fonts: Neulis Sans (header logo) -->
+  <link rel="stylesheet" href="https://use.typekit.net/vfs1sel.css"><!-- Adobe Fonts: Futura PT Bold (section headings) -->
+  <link rel="stylesheet" href="css/styles.css?v=20261027j">
   <script>document.documentElement.classList.add('js');</script>
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=20261027j" defer></script>
 </head>
 <body>
 
@@ -36,15 +39,15 @@
 
 <!-- 1. HERO -->
 <section id="top" class="hero">
-  <div class="hero-panels">
-    <div class="hero-panel"><img src="assets/images/hero-birmingham-skyline.jpg" alt="Birmingham skyline at dusk" width="1600" height="1600" fetchpriority="high"></div>
-    <div class="hero-panel"><img src="assets/images/hero-colonnade.jpg" alt="A curving white stucco colonnade on a London terrace" width="1200" height="1800" fetchpriority="high"></div>
-    <div class="hero-panel"><img src="assets/images/hero-rotunda.jpg" alt="The Bullring Rotunda in Birmingham, black and white" width="1800" height="1800" fetchpriority="high"></div>
+  <!-- Full-screen background loop, silent. One 16:9 file for every screen; phones see the centre (object-fit: cover). -->
+  <div class="hero-media">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="assets/videos/hero-loop-2026.mp4" type="video/mp4">
+    </video>
   </div>
   <div class="hero-overlay">
-    <h1 class="wordmark" aria-label="John Orton"><span class="wordmark-text" aria-hidden="true">John Orton</span><span class="caret" aria-hidden="true">&nbsp;</span></h1>
     <div class="hero-foot">
-      <p class="tagline">I make films and take pictures. Based in London, working wherever the job is.</p>
+      <h1 class="hero-logo"><img src="assets/images/orton-logo-white.png" alt="John Orton — Film &amp; Photography" width="360" height="351"></h1>
       <div class="scroll-hint mono" aria-hidden="true">Scroll ↓</div>
     </div>
   </div>
@@ -53,11 +56,12 @@
 <!-- 3. ABOUT -->
 <section id="about" class="about section-pad">
   <div class="about-grid wrap">
-    <div class="portrait" data-reveal><img src="assets/images/portrait-john.jpg" alt="John Orton sitting at an outdoor table with a French bulldog" width="1061" height="1155" loading="lazy" decoding="async"></div>
+    <div class="portrait" data-reveal><img src="assets/images/about-barbican.jpg" alt="John Orton in a denim jacket beneath the concrete walkways of the Barbican, London" width="1200" height="1500" loading="lazy" decoding="async"></div>
     <div data-reveal>
       <h2 class="h-about" data-type>About</h2>
-      <p class="lead">I'm John. I live in London and I've been shooting for about twelve years. Along the way that's meant work with Maya Jane Coles, Marina &amp; the Diamonds, Kim Ann Foxman and the fashion designer Hasan Hejazi.</p>
-      <p class="lead muted">Commercial film, music video, documentary, stills. I shoot it, cut it and grade it myself, so what you see in the edit is what we talked about on the day. Some jobs are me on my own with one camera. Some need a full crew. Both are fine.</p>
+      <p class="lead">I’m John, a London-based videographer, photographer and editor with more than 12 years’ experience creating content that stands out.</p>
+      <p class="lead muted">My work spans fashion, music, sport and lifestyle. I’ve worked with brands and organisations including Topman, the Rugby Football Union (RFU) and Westminster City Council, with artists such as Maya Jane Coles, Marina &amp; the Diamonds and Kim Ann Foxman, and with well-known personalities including Big John Fisher, Jack Fincham and Gaz Beadle of Geordie Shore.</p>
+      <p class="lead muted">I love making bold, engaging videos and photos that grab attention and tell a story. I’m hands-on through the whole creative process, from the first shot to the final edit, whether I’m working solo behind the camera or as part of a larger crew.</p>
       <div class="stats">
         <div><div class="stat-val">12+</div><div class="stat-label mono">Years shooting</div></div>
         <div><div class="stat-val">London</div><div class="stat-label mono">In London, will travel</div></div>
@@ -85,20 +89,12 @@
   <div class="wrap">
     <div class="section-head">
       <h2 class="h-big" data-type>Showreel</h2>
-      <div class="mono meta-dim">2026 / 02:14</div>
     </div>
     <div class="player" data-reveal>
-      <!-- Showreel: drop the file at assets/videos/showreel.mp4 and a poster at assets/images/showreel-poster.jpg -->
-      <video class="reel-video" muted playsinline preload="none" poster="assets/images/showreel-poster.jpg">
-        <source src="assets/videos/showreel.mp4" type="video/mp4">
+      <video class="reel-video" muted playsinline preload="none" poster="assets/images/showreel-2026-poster.jpg">
+        <source src="assets/videos/showreel-2026.mp4" type="video/mp4">
       </video>
       <button class="play-pill mono" type="button"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play reel</span></button>
-    </div>
-    <div class="credits">
-      <div><span class="credit-label mono">Direction</span>John Orton</div>
-      <div><span class="credit-label mono">Camera</span>Sony FX, Panasonic S-series</div>
-      <div><span class="credit-label mono">Selected clients</span>Coors Light, Topshop Topman, RFU</div>
-      <div><span class="credit-label mono">Enquiries</span><a href="#contact" class="underline">Get in touch</a></div>
     </div>
   </div>
 </section>
@@ -108,39 +104,58 @@
   <div class="wrap">
     <div class="section-head section-head--film">
       <h2 class="h-big" data-type>Film</h2>
-      <div class="mono meta-muted">Selected work, 2019 to 2026</div>
     </div>
-    <!-- Titles and years are placeholders. To add a clip to a card, replace the .ph div with:
-         <video src="assets/videos/film-1.mp4" poster="assets/images/film-1.jpg" muted playsinline loop preload="none" data-autoplay></video> -->
+    <!-- Films are YouTube videos (works for public and unlisted). Each card shows a local thumbnail and only loads
+         the YouTube player when Play is pressed. To add one: copy a card, set data-yt to the video ID and save its
+         thumbnail as assets/images/film-NAME.jpg (https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg).
+         Featured films go in .film-grid; extra films go in .film-more (use span-4) and the "Show more films"
+         button appears automatically. -->
     <div class="film-grid">
       <div class="film-card span-12" data-reveal>
-        <div class="film-media player">
-          <video src="assets/videos/marina-wedding-bells-bts.mp4" poster="assets/images/marina-wedding-bells-poster.jpg" playsinline preload="none"></video>
-          <button class="play-pill mono" type="button"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        <div class="film-media r-16-9 yt" data-yt="fDvy2a-fQIY">
+          <img src="assets/images/film-big-john-soho.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Big John Takes on Soho"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
         </div>
-        <div class="film-cap"><div class="film-title">Marina &amp; The Diamonds, Wedding Bells</div><div class="film-meta mono">Music, behind the scenes</div></div>
+        <div class="film-cap"><div class="film-title">Big John Takes on Soho</div></div>
       </div>
-      <a href="#contact" class="film-card span-7" data-reveal>
-        <div class="film-media r-16-9"><div class="ph" data-label="Film 01, club, low light"></div></div>
-        <div class="film-cap"><div class="film-title">Late Night Disco</div><div class="film-meta mono">Music, 2025</div></div>
-      </a>
-      <a href="#contact" class="film-card span-5" data-reveal>
-        <div class="film-media r-4-3"><div class="ph" data-label="Film 02, brand activation"></div></div>
-        <div class="film-cap"><div class="film-title">Coors Light Ice Bars</div><div class="film-meta mono">Commercial, 2024</div></div>
-      </a>
-      <a href="#contact" class="film-card span-5" data-reveal>
-        <div class="film-media r-4-3"><div class="ph" data-label="Film 03, fashion film"></div></div>
-        <div class="film-cap"><div class="film-title">Hasan Hejazi SS</div><div class="film-meta mono">Fashion, 2024</div></div>
-      </a>
-      <a href="#contact" class="film-card span-7" data-reveal>
-        <div class="film-media r-16-9"><div class="ph" data-label="Film 04, artist performance"></div></div>
-        <div class="film-cap"><div class="film-title">Maya Jane Coles</div><div class="film-meta mono">Music, 2023</div></div>
-      </a>
-      <a href="#contact" class="film-card span-12" data-reveal>
-        <div class="film-media r-21-9"><div class="ph" data-label="Film 05, documentary"></div></div>
-        <div class="film-cap"><div class="film-title">Brexit &amp; Me</div><div class="film-meta mono">Doc, 2021</div></div>
-      </a>
+      <div class="film-card span-6" data-reveal>
+        <div class="film-media r-16-9 yt" data-yt="74nNKGGOTmg">
+          <img src="assets/images/film-maya-jane-coles-everything.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Maya Jane Coles – Everything | Behind the Scenes"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        </div>
+        <div class="film-cap"><div class="film-title">Maya Jane Coles – Everything | Behind the Scenes</div></div>
+      </div>
+      <div class="film-card span-6" data-reveal>
+        <div class="film-media r-16-9 yt" data-yt="wJYYM1eBbU8">
+          <img src="assets/images/film-by-rotation-mayfair.jpg" alt="" width="1136" height="639" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play By Rotation: Bringing Sustainable Fashion to Mayfair"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        </div>
+        <div class="film-cap"><div class="film-title">By Rotation: Bringing Sustainable Fashion to Mayfair</div></div>
+      </div>
+      <div class="film-card span-6" data-reveal>
+        <div class="film-media r-16-9 yt pill-low" data-yt="yYlFFuWAqlo">
+          <img src="assets/images/film-notting-hill-carnival.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Notting Hill Carnival | London&#x27;s Biggest Street Party"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        </div>
+        <div class="film-cap"><div class="film-title">Notting Hill Carnival | London&#x27;s Biggest Street Party</div></div>
+      </div>
+      <div class="film-card span-6" data-reveal>
+        <div class="film-media r-16-9 yt" data-yt="cICFgF0Q7DQ">
+          <img src="assets/images/film-their-stories.jpg" alt="" width="937" height="527" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Their Stories: Life After Violence and Abuse"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        </div>
+        <div class="film-cap"><div class="film-title">Their Stories: Life After Violence and Abuse</div></div>
+      </div>
+      <div class="film-card span-12" data-reveal>
+        <div class="film-media r-16-9 yt" data-yt="ZnfO6LvfSUQ">
+          <img src="assets/images/film-ford-mustang.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Ford Mustang Montage"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        </div>
+        <div class="film-cap"><div class="film-title">Ford Mustang Montage</div></div>
+      </div>
     </div>
+    <div class="film-grid film-more" id="film-more" hidden></div>
+    <button class="more-btn mono" type="button" aria-controls="film-more" aria-expanded="false" data-more="Show more films" data-less="Show fewer films" hidden>Show more films</button>
   </div>
 </section>
 
@@ -149,36 +164,64 @@
   <div class="wrap">
     <div class="section-head section-head--stills">
       <h2 class="h-big" data-type>Stills</h2>
-      <div class="mono meta-muted">Drag sideways →</div>
     </div>
-  </div>
-  <div class="stills-track" tabindex="0" aria-label="Photographs, scroll horizontally">
-    <div class="still"><img src="assets/images/still-birmingham-skyline.jpg" alt="Birmingham skyline at dusk, with the Rotunda, St Martin's spire and Selfridges" width="1600" height="1067" loading="lazy" decoding="async"></div>
-    <div class="still"><img src="assets/images/still-colonnade.jpg" alt="A curving white stucco colonnade on a London terrace" width="1067" height="1600" loading="lazy" decoding="async"></div>
-    <div class="still"><div class="ph" data-label="Still 03, city / architecture"></div></div>
-    <div class="still"><div class="ph" data-label="Still 04, live music"></div></div>
-    <div class="still"><img src="assets/images/still-rotunda.jpg" alt="The Bullring Rotunda in Birmingham, black and white, looking up" width="1600" height="1068" loading="lazy" decoding="async"></div>
-    <div class="still"><div class="ph" data-label="Still 06, detail / macro"></div></div>
+    <!-- Featured six in .stills-grid; the rest in .stills-more behind "Show more photos".
+         Each photo: a ~1000px grid image plus a ~1920px "-lg" version that opens in the viewer. -->
+    <div class="stills-grid" data-reveal>
+      <a class="still" href="assets/images/still-01-bee-lg.jpg"><img src="assets/images/still-01-bee.jpg" alt="A bumblebee in flight against a soft teal background" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-02-canal-portrait-lg.jpg"><img src="assets/images/still-02-canal-portrait.jpg" alt="Portrait of a young man beside a canal in golden evening light" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-03-piano-hands-lg.jpg"><img src="assets/images/still-03-piano-hands.jpg" alt="Close-up of hands playing a piano keyboard" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-04-brooklyn-bridge-lg.jpg"><img src="assets/images/still-04-brooklyn-bridge.jpg" alt="Brooklyn Bridge cables and walkway in black and white" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-05-cocktails-lg.jpg"><img src="assets/images/still-05-cocktails.jpg" alt="Two cocktails on a low-lit bar table" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-06-bmw-interior-lg.jpg"><img src="assets/images/still-06-bmw-interior.jpg" alt="The interior of a BMW M car: steering wheel, gear lever and dashboard" width="1000" height="666" loading="lazy" decoding="async"></a>
+    </div>
+    <div class="stills-more" id="stills-more" hidden>
+      <a class="still" href="assets/images/still-07-manhattan-street-lg.jpg"><img src="assets/images/still-07-manhattan-street.jpg" alt="A busy Manhattan street looking up to One World Trade Center" width="666" height="1000" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-08-rocky-bay-lg.jpg"><img src="assets/images/still-08-rocky-bay.jpg" alt="A rocky shoreline and green hills across a calm bay" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-09-mustang-lg.jpg"><img src="assets/images/still-09-mustang.jpg" alt="A red Ford Mustang GT parked on a tree-lined drive" width="1000" height="561" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-10-follow-your-heart-lg.jpg"><img src="assets/images/still-10-follow-your-heart.jpg" alt="Follow Your Heart dairy-free cheese packs on a red background" width="1000" height="1000" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-11-spider-web-lg.jpg"><img src="assets/images/still-11-spider-web.jpg" alt="Dew drops on a spider&#x27;s web" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-12-birmingham-skyline-lg.jpg"><img src="assets/images/still-12-birmingham-skyline.jpg" alt="Birmingham skyline with the Rotunda, St Martin&#x27;s spire and Selfridges" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-13-manhattan-bridge-lg.jpg"><img src="assets/images/still-13-manhattan-bridge.jpg" alt="The Manhattan Bridge framed between buildings in DUMBO, Brooklyn" width="666" height="1000" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-14-geese-lg.jpg"><img src="assets/images/still-14-geese.jpg" alt="A flock of geese on rippling water" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-15-golden-gate-lg.jpg"><img src="assets/images/still-15-golden-gate.jpg" alt="The Golden Gate Bridge seen from the headlands" width="1000" height="618" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-16-colonnade-lg.jpg"><img src="assets/images/still-16-colonnade.jpg" alt="A curving stucco colonnade on a London terrace, black and white" width="532" height="1000" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-17-boardwalk-dog-lg.jpg"><img src="assets/images/still-17-boardwalk-dog.jpg" alt="A dog on a wooden boardwalk through woodland" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-18-rotunda-lg.jpg"><img src="assets/images/still-18-rotunda.jpg" alt="The Rotunda in Birmingham, black and white, looking up" width="1000" height="667" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-19-canopy-lg.jpg"><img src="assets/images/still-19-canopy.jpg" alt="A sweeping modern canopy roof against a pale sky" width="1000" height="665" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-20-los-angeles-lg.jpg"><img src="assets/images/still-20-los-angeles.jpg" alt="Los Angeles skyline seen from the hills" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-21-french-bulldog-lg.jpg"><img src="assets/images/still-21-french-bulldog.jpg" alt="A French bulldog portrait in black and white" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-22-lafayette-lg.jpg"><img src="assets/images/still-22-lafayette.jpg" alt="A Lafayette Street sign and traffic light against a glass tower" width="635" height="1000" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-23-trains-lg.jpg"><img src="assets/images/still-23-trains.jpg" alt="Trains lined up beneath a station, black and white" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-24-mercedes-lg.jpg"><img src="assets/images/still-24-mercedes.jpg" alt="A grey Mercedes-AMG coupé on a rooftop car park" width="1000" height="667" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-25-green-eye-lg.jpg"><img src="assets/images/still-25-green-eye.jpg" alt="Close-up of a green eye" width="1000" height="562" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-26-brick-facade-lg.jpg"><img src="assets/images/still-26-brick-facade.jpg" alt="A brick building facade in black and white" width="1000" height="503" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-27-office-windows-lg.jpg"><img src="assets/images/still-27-office-windows.jpg" alt="A grid of office windows in black and white" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-28-holly-lg.jpg"><img src="assets/images/still-28-holly.jpg" alt="Holly berries on a branch" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-29-stone-arcade-lg.jpg"><img src="assets/images/still-29-stone-arcade.jpg" alt="A stone arcade corridor in black and white" width="1000" height="846" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-30-pianist-lg.jpg"><img src="assets/images/still-30-pianist.jpg" alt="A pianist in a white jacket at the keys" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-31-st-pauls-lg.jpg"><img src="assets/images/still-31-st-pauls.jpg" alt="The dome of St Paul&#x27;s Cathedral against the sky" width="750" height="1000" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-32-city-street-lg.jpg"><img src="assets/images/still-32-city-street.jpg" alt="A wide city street running down towards a domed building" width="1000" height="666" loading="lazy" decoding="async"></a>
+      <a class="still" href="assets/images/still-33-hollywood-lg.jpg"><img src="assets/images/still-33-hollywood.jpg" alt="A palm-lined Los Angeles street with the Hollywood sign in the distance" width="1000" height="666" loading="lazy" decoding="async"></a>
+    </div>
+    <button class="more-btn mono" type="button" aria-controls="stills-more" aria-expanded="false" data-more="Show more photos" data-less="Show fewer photos" hidden>Show more photos</button>
   </div>
 </section>
 
-<!-- 8. STATEMENT -->
-<section class="statement">
-  <p class="statement-text" data-reveal>I shoot <span class="accent">film first</span>. The photographs come out of the same habit of watching people. Most of my work is for brands, agencies and musicians who want something that looks like a person was actually in the room.</p>
-  <div class="disciplines mono" data-reveal>
-    <div>Commercial film</div>
-    <div>Music video</div>
-    <div>Documentary</div>
-    <div>Photography</div>
-  </div>
-</section>
+<!-- Photo viewer (opened by clicking a still): a swipeable strip, slides are built by js/main.js -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button class="lb-close mono" type="button" aria-label="Close">Close ✕</button>
+  <button class="lb-nav lb-prev" type="button" aria-label="Previous photo">←</button>
+  <div class="lb-track"></div>
+  <div class="lb-count mono" aria-live="polite"></div>
+  <button class="lb-nav lb-next" type="button" aria-label="Next photo">→</button>
+</div>
 
 <!-- 9. CONTACT -->
 <section id="contact" class="contact dark">
   <div class="contact-grid wrap">
     <div>
-      <h2 class="h-contact" data-type>Start a project</h2>
-      <p class="contact-intro">Tell me what you're making, when it's happening and roughly what you can spend. I'll come back with how I'd shoot it and a price.</p>
+      <h2 class="h-contact" data-type>Let’s chat</h2>
       <div class="contact-links">
         <a href="mailto:johnortoncreative@gmail.com" class="contact-email">johnortoncreative@gmail.com</a>
         <a href="tel:+447972258658" class="contact-phone">+44 (0) 797 225 8658</a>
@@ -199,7 +242,7 @@
           <input type="email" name="email" autocomplete="email" required>
         </label>
         <label class="field">
-          <span class="field-label mono">The project</span>
+          <span class="field-label mono">Message</span>
           <textarea name="brief" rows="4" required></textarea>
         </label>
         <p class="form-error" role="alert" hidden></p>

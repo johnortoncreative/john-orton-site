@@ -13,3 +13,75 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Old Squarespace addresses (johnorton.co.uk), so old links and search results don't hit "page not found".
+# Pages with a matching section on the new site go there; dropped pages go to the home page.
+[[redirects]]
+  from = "/portfolio"
+  to = "/#photography"
+  status = 301
+
+[[redirects]]
+  from = "/photography-2"
+  to = "/#photography"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/#contact"
+  status = 301
+
+[[redirects]]
+  from = "/latest"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/brexit-me"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/documentary-brexit-me"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/home-1"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/home-2"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/home-3"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/home-adversary"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/modern-organic-thai"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/our-story"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/new-page"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/read-me-shift"
+  to = "/"
+  status = 301
