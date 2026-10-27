@@ -22,7 +22,7 @@
   --paper-50: rgba(239,233,222,.5);
   --paper-40: rgba(239,233,222,.4);
 
-  --display: 'Saira Condensed', 'DM Sans', sans-serif;
+  --display: 'DM Sans', sans-serif; /* fallback only: headings use Adobe Futura PT / Neulis */
   --body: 'DM Sans', Helvetica, Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --ease: cubic-bezier(.2,.8,.2,1);
@@ -137,7 +137,7 @@ img, video { display: block; max-width: 100%; }
 }
 .h-big { font-size: clamp(40px, 8vw, 130px); line-height: .86; }
 .h-about { font-size: clamp(38px, 5vw, 78px); line-height: .9; margin-bottom: 28px; }
-.h-contact { font-size: min(clamp(44px, 7vw, 112px), 100cqi / 8); line-height: .86; margin-bottom: 26px; } /* Futura is wide: stays on one line in its column */
+.h-contact { font-size: min(clamp(44px, 7vw, 112px), 100cqi / 5.6); line-height: .86; margin-bottom: 26px; } /* Futura is wide: stays on one line in its column */
 .contact-grid > div:first-child { container-type: inline-size; }
 .meta-muted { font-size: 11px; letter-spacing: .02em; color: var(--ink-55); }
 
@@ -274,18 +274,19 @@ body.lb-open { overflow: hidden; }
 /* 9. Contact */
 .contact { padding: 110px var(--gutter) 90px; }
 .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 56px; }
-.contact-intro { margin: 0 0 40px; font-size: 17px; line-height: 1.6; max-width: 44ch; color: var(--paper-70); }
 .contact-links { display: grid; gap: 18px; font-size: 15px; justify-items: start; }
 .contact-email {
-  color: var(--paper); font-family: var(--display); font-weight: 600; font-size: 26px;
+  color: var(--paper); font-family: futura-pt-bold, var(--display); font-weight: 700; font-size: 26px;
   border-bottom: 1px solid rgba(239,233,222,.3); padding-bottom: 6px;
   overflow-wrap: anywhere;
 }
-.contact-phone { color: var(--paper-78); }
+.contact-phone { color: var(--paper); font-family: futura-pt-bold, var(--display); font-weight: 700; font-size: 26px; } /* matches the email address */
 .enquiry { display: grid; gap: 22px; }
 .hp { position: absolute; left: -9999px; }
 .field { display: grid; gap: 8px; }
-.field-label { font-size: 10px; letter-spacing: .02em; color: var(--paper-50); }
+/* Small labels: Futura PT Bold in spaced capitals */
+.field-label, .btn { font-family: futura-pt-bold, var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .14em; }
+.field-label { font-size: 11px; color: var(--paper-66); }
 .field input, .field textarea {
   width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(239,233,222,.28);
   border-radius: 0; color: var(--paper); font-size: 17px; padding: 8px 0; outline: none;
@@ -297,13 +298,13 @@ body.lb-open { overflow: hidden; }
 .form-error { margin: 0; font-size: 14px; color: #F08B73; }
 .btn {
   justify-self: start; margin-top: 8px; padding: 15px 32px; border: none; border-radius: 999px;
-  background: var(--accent); color: var(--paper); font-size: 11px; letter-spacing: .02em;
+  background: var(--accent); color: var(--paper); font-size: 12px;
   cursor: pointer; transition: transform 200ms, background 200ms;
 }
 .btn:hover { transform: translateY(-2px); background: var(--accent-hover); }
 .btn[disabled] { opacity: .6; transform: none; cursor: wait; }
 .form-sent {
-  padding: 40px 0; font-family: var(--display); font-weight: 600; font-size: 32px;
+  padding: 40px 0; font-family: futura-pt-bold, var(--display); font-weight: 700; font-style: italic; font-size: 32px;
   color: var(--accent);
 }
 .site-footer {
@@ -361,7 +362,7 @@ body.lb-open { overflow: hidden; }
   .lb-slide { padding: 56px 0 52px; }   /* photos edge to edge on phones */
   .lb-nav { display: none; }             /* swipe instead */
 
-  .contact-email { font-size: 22px; }
+  .contact-email, .contact-phone { font-size: 22px; }
   .site-footer { margin-top: 64px; flex-direction: column; gap: 10px; }
 }
 

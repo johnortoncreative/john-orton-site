@@ -323,7 +323,7 @@
       if (firstBad) {
         showError(firstBad.type === 'email' && firstBad.value
           ? 'That email address doesn’t look right.'
-          : 'Please fill in your name, email and a line about the project.');
+          : 'Please fill in your name, email and a message.');
         firstBad.focus();
         return;
       }
