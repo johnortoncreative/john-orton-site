@@ -212,6 +212,8 @@ img, video { display: block; max-width: 100%; }
 .film-media > iframe { border: 0; }
 .film-more { margin-top: 20px; }
 .film-more .film-title { font-size: clamp(18px, 1.5vw, 22px); }
+/* Play button at the bottom instead of the middle, for thumbnails where a face sits in the centre */
+.pill-low .play-pill { top: auto; bottom: 7%; transform: translateX(-50%); }
 .more-btn {
   display: block; margin: 36px auto 0; padding: 14px 26px;
   border: 1px solid var(--rule-16); border-radius: 999px; background: none; color: inherit;
