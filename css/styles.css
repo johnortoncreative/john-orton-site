@@ -49,7 +49,6 @@ img, video { display: block; max-width: 100%; }
 .mono { font-family: var(--mono); }
 .wrap { max-width: 1400px; margin-left: auto; margin-right: auto; }
 .dark { background: var(--night); color: var(--paper); }
-.accent { color: var(--accent); }
 
 /* Media: placeholders + real images/videos fill their box */
 .ph, .hero-video,
@@ -154,14 +153,14 @@ img, video { display: block; max-width: 100%; }
   padding-top: 26px; border-top: 1px solid var(--rule-16);
 }
 .stat-val { font-family: futura-pt-bold, var(--display); font-weight: 700; font-size: 40px; line-height: 1; }
-.stat-label { font-size: 10px; letter-spacing: .02em; color: var(--ink-55); margin-top: 6px; }
+.stat-label { font-size: 10px; line-height: 1.4; color: var(--ink-55); margin-top: 8px; }
 
 /* 4. Clients */
 .clients {
   padding: 56px 0 64px; overflow: hidden;
   border-top: 1px solid var(--rule-14); border-bottom: 1px solid var(--rule-14);
 }
-.clients-label { margin-bottom: 28px; padding: 0 var(--gutter); font-size: 11px; letter-spacing: .02em; color: var(--ink-55); }
+.clients-label { margin-bottom: 28px; padding: 0 var(--gutter); font-size: 11px; color: var(--ink-55); }
 .marquee { display: flex; width: max-content; animation: marquee 34s linear infinite; }
 .marquee-row {
   display: flex; gap: 40px; padding-right: 40px;
@@ -264,13 +263,6 @@ img, video { display: block; max-width: 100%; }
 .lb-prev { left: 8px; } .lb-next { right: 8px; }
 body.lb-open { overflow: hidden; }
 
-/* 8. Statement */
-.statement { padding: 110px var(--gutter) 120px; border-top: 1px solid var(--rule-14); }
-.statement-text {
-  max-width: 1180px; margin: 0 auto; font-family: futura-pt, var(--display); font-weight: 700; /* Futura PT Heavy: a touch lighter than Bold */
-  font-size: clamp(30px, 4.6vw, 74px); line-height: 1.1; letter-spacing: -.005em;
-}
-
 /* 9. Contact */
 .contact { padding: 110px var(--gutter) 90px; }
 .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 56px; }
@@ -284,8 +276,8 @@ body.lb-open { overflow: hidden; }
 .enquiry { display: grid; gap: 22px; }
 .hp { position: absolute; left: -9999px; }
 .field { display: grid; gap: 8px; }
-/* Small labels: Futura PT Bold in spaced capitals */
-.field-label, .btn { font-family: futura-pt-bold, var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .14em; }
+/* Small labels: Futura PT Book in spaced capitals (form, stats, "People I've worked with") */
+.field-label, .btn, .stat-label, .clients-label { font-family: futura-pt, var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: .14em; }
 .field-label { font-size: 11px; color: var(--paper-66); }
 .field input, .field textarea {
   width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(239,233,222,.28);
@@ -337,13 +329,12 @@ body.lb-open { overflow: hidden; }
   .hero { min-height: 540px; }
   .hero-overlay { padding-bottom: 28px; }
 
-  .section-pad, .film, .statement, .contact { padding-top: 80px; }
+  .section-pad, .film, .contact { padding-top: 80px; }
   .about.section-pad { padding-bottom: 24px; }
   .clients { padding: 22px 0 24px; }
   .clients-label { margin-bottom: 8px; }
   .reel { padding: 72px var(--gutter) 80px; }
   .stills { padding: 72px var(--gutter) 80px; }
-  .statement { padding-bottom: 88px; }
   .about-grid, .contact-grid { gap: 40px; }
 
   .stat-val { font-size: 28px; }
