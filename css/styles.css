@@ -54,7 +54,7 @@ img, video { display: block; max-width: 100%; }
 /* Media: placeholders + real images/videos fill their box */
 .ph, .hero-video,
 .portrait > img, .film-media > img, .film-media > video, .film-media > iframe,
-.still > img, .player > video {
+.player > video {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
 }
 .ph {
@@ -223,18 +223,46 @@ img, video { display: block; max-width: 100%; }
 .more-btn[hidden] { display: none; }
 
 /* 7. Stills */
-.stills { padding: 100px 0 110px; }
-.stills .wrap { padding: 0 var(--gutter); }
-.stills-track {
-  display: flex; align-items: flex-start; gap: 16px; overflow-x: auto; padding: 0 var(--gutter) 20px;
-  scroll-snap-type: x mandatory; scroll-padding-left: var(--gutter);
-  -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+.stills { padding: 100px var(--gutter) 110px; }
+.still { display: block; position: relative; overflow: hidden; background: var(--placeholder); cursor: zoom-in; }
+.still > img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--ease); }
+.still:hover > img { transform: scale(1.03); }
+.still:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+/* featured six: even 3:2 grid */
+.stills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.stills-grid .still { aspect-ratio: 3 / 2; }
+/* the rest: flowing columns, every photo keeps its own shape */
+.stills-more { columns: 3; column-gap: 16px; margin-top: 16px; }
+.stills-more .still { margin-bottom: 16px; break-inside: avoid; }
+.stills-more .still > img { height: auto; }
+
+/* Photo viewer: a horizontal scroll-snap strip, so photos slide with your finger */
+.lightbox {
+  position: fixed; inset: 0; z-index: 92; /* above header (80) and grain (90), below the custom cursor (95) */
+  background: rgba(20,18,14,.95); color: var(--paper);
 }
-.stills-track:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-.still {
-  position: relative; flex: 0 0 auto; width: min(60vw, 500px); aspect-ratio: 1 / 1;
-  scroll-snap-align: start; background: var(--placeholder); overflow: hidden;
+.lightbox[hidden] { display: none; }
+.lb-track {
+  position: absolute; inset: 0; display: flex; overflow-x: auto; overflow-y: hidden;
+  scroll-snap-type: x mandatory; overscroll-behavior: contain; scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pinch-zoom; /* sideways swipes scroll the strip; downward drags are handled by the swipe-to-close script */
 }
+.lb-track::-webkit-scrollbar { display: none; }
+.lb-slide {
+  flex: 0 0 100%; height: 100%; box-sizing: border-box; padding: 56px 72px 52px;
+  display: flex; align-items: center; justify-content: center;
+  scroll-snap-align: center; scroll-snap-stop: always;
+}
+.lb-slide img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.lb-count { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); font-size: 11px; letter-spacing: .02em; opacity: .6; }
+.lb-close, .lb-nav { position: absolute; z-index: 1; background: none; border: 0; color: var(--paper); cursor: pointer; }
+.lb-close { top: 18px; right: 22px; font-size: 12px; letter-spacing: .02em; padding: 8px; }
+.lb-nav { top: 50%; transform: translateY(-50%); font-size: 28px; padding: 16px; opacity: .75; }
+.lb-nav:hover, .lb-close:hover { opacity: 1; }
+.lb-nav[disabled] { opacity: .2; cursor: default; }
+.lb-prev { left: 8px; } .lb-next { right: 8px; }
+body.lb-open { overflow: hidden; }
 
 /* 8. Statement */
 .statement { padding: 110px var(--gutter) 120px; border-top: 1px solid var(--rule-14); }
@@ -291,6 +319,8 @@ img, video { display: block; max-width: 100%; }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 860px) {
+  .stills-grid { grid-template-columns: repeat(2, 1fr); }
+  .stills-more { columns: 2; }
   .film-grid { grid-template-columns: 1fr; gap: 28px; }
   .span-5, .span-6, .span-7, .span-12 { grid-column: auto; }
   .r-21-9 { aspect-ratio: 3 / 2; }
@@ -311,7 +341,7 @@ img, video { display: block; max-width: 100%; }
   .clients { padding: 22px 0 24px; }
   .clients-label { margin-bottom: 8px; }
   .reel { padding: 72px var(--gutter) 80px; }
-  .stills { padding: 72px 0 80px; }
+  .stills { padding: 72px var(--gutter) 80px; }
   .statement { padding-bottom: 88px; }
   .about-grid, .contact-grid { gap: 40px; }
 
@@ -325,8 +355,11 @@ img, video { display: block; max-width: 100%; }
 
   .play-pill { padding: 12px 20px; gap: 10px; }
 
-
-  .still { width: 78vw; }
+  .stills-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .stills-more { columns: 2; column-gap: 10px; margin-top: 10px; }
+  .stills-more .still { margin-bottom: 10px; }
+  .lb-slide { padding: 56px 0 52px; }   /* photos edge to edge on phones */
+  .lb-nav { display: none; }             /* swipe instead */
 
   .contact-email { font-size: 22px; }
   .site-footer { margin-top: 64px; flex-direction: column; gap: 10px; }

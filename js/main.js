@@ -146,19 +146,132 @@
     });
   }
 
-  /* ---------- "Show more films": only appears when .film-more has cards ---------- */
-  function moreFilms() {
-    var more = document.querySelector('.film-more');
-    var btn = document.querySelector('.more-btn');
-    if (!more || !btn || !more.children.length) return;
-    btn.hidden = false;
-    btn.addEventListener('click', function () {
-      var open = more.hidden;
-      more.hidden = !open;
-      btn.setAttribute('aria-expanded', String(open));
-      btn.textContent = open ? 'Show fewer films' : 'Show more films';
-      if (open) more.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('revealed'); });
+  /* ---------- "Show more" buttons (films, photos): only appear when their hidden list has items ---------- */
+  function showMore() {
+    document.querySelectorAll('.more-btn[aria-controls]').forEach(function (btn) {
+      var more = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!more || !more.children.length) return;
+      btn.hidden = false;
+      btn.addEventListener('click', function () {
+        var open = more.hidden;
+        more.hidden = !open;
+        btn.setAttribute('aria-expanded', String(open));
+        btn.textContent = btn.getAttribute(open ? 'data-less' : 'data-more');
+        if (open) more.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('revealed'); });
+        else btn.closest('section').scrollIntoView({ block: 'start' });
+      });
     });
+  }
+
+  /* ---------- Photo viewer: a swipeable strip of every still (drag on phones, trackpad, arrows, Esc) ---------- */
+  function lightbox() {
+    var box = document.getElementById('lightbox');
+    var links = Array.prototype.slice.call(document.querySelectorAll('a.still'));
+    if (!box || !links.length) return;
+    var track = box.querySelector('.lb-track'), count = box.querySelector('.lb-count');
+    var closeBtn = box.querySelector('.lb-close');
+    var prevBtn = box.querySelector('.lb-prev'), nextBtn = box.querySelector('.lb-next');
+    var current = 0, opener = null, gliding = null; // gliding: target photo while an arrow-press scroll is animating
+
+    // one slide per photo; the big image only loads when it's on screen or next to it
+    var slides = links.map(function (a) {
+      var slide = document.createElement('div'); slide.className = 'lb-slide';
+      var img = document.createElement('img');
+      var thumb = a.querySelector('img');
+      img.alt = thumb ? thumb.alt : ''; img.decoding = 'async';
+      img.setAttribute('data-src', a.getAttribute('href'));
+      slide.appendChild(img); track.appendChild(slide);
+      return img;
+    });
+    function load(i) {
+      var img = slides[i];
+      if (img && !img.getAttribute('src')) img.src = img.getAttribute('data-src');
+    }
+    function setCurrent(i) {
+      current = i;
+      count.textContent = (i + 1) + ' / ' + links.length;
+      prevBtn.disabled = i === 0; nextBtn.disabled = i === links.length - 1;
+      load(i); load(i + 1); load(i - 1);
+    }
+    function go(i, smooth) {
+      i = Math.max(0, Math.min(links.length - 1, i));
+      setCurrent(i);
+      gliding = smooth && !reduceMotion ? i : null;
+      track.scrollTo({ left: i * track.clientWidth, behavior: smooth && !reduceMotion ? 'smooth' : 'auto' });
+    }
+    // swiping / trackpad: work out which photo is showing from the scroll position
+    // swipe down to close: the photo follows your finger and the background fades; let go past ~110px to close
+    var t0 = null, vertical = null, dragY = 0;
+    function resetDrag(animate) {
+      var slide = track.children[current];
+      if (slide) {
+        slide.style.transition = animate ? 'transform 220ms ease' : '';
+        slide.style.transform = '';
+      }
+      box.style.backgroundColor = '';
+      dragY = 0; vertical = null;
+    }
+    track.addEventListener('touchstart', function (e) {
+      gliding = null;
+      t0 = e.touches.length === 1 ? { x: e.touches[0].clientX, y: e.touches[0].clientY } : null;
+      vertical = null; dragY = 0;
+    }, { passive: true });
+    track.addEventListener('touchmove', function (e) {
+      if (!t0) return;
+      var dx = e.touches[0].clientX - t0.x, dy = e.touches[0].clientY - t0.y;
+      if (vertical === null && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) vertical = dy > 0 && Math.abs(dy) > Math.abs(dx);
+      if (!vertical) return;
+      dragY = Math.max(0, dy);
+      var slide = track.children[current];
+      slide.style.transition = '';
+      slide.style.transform = 'translateY(' + dragY + 'px)';
+      box.style.backgroundColor = 'rgba(20,18,14,' + (0.95 * Math.max(0.15, 1 - dragY / 350)).toFixed(3) + ')';
+    }, { passive: true });
+    track.addEventListener('touchend', function () {
+      if (vertical && dragY > 110) { close(); }
+      else if (vertical) { resetDrag(true); }
+      t0 = null;
+    });
+    track.addEventListener('wheel', function () { gliding = null; }, { passive: true });
+    track.addEventListener('scroll', function () {
+      var i = Math.round(track.scrollLeft / track.clientWidth);
+      if (gliding !== null) { if (i === gliding) gliding = null; return; } // ignore the in-between frames
+      if (i !== current && i >= 0 && i < links.length) setCurrent(i);
+    }, { passive: true });
+
+    function open(i) {
+      opener = document.activeElement;
+      box.hidden = false;
+      document.body.classList.add('lb-open');
+      go(i, false);
+      closeBtn.focus();
+    }
+    function close() {
+      resetDrag(false);
+      box.hidden = true;
+      document.body.classList.remove('lb-open');
+      if (opener) opener.focus();
+    }
+    links.forEach(function (a, i) {
+      a.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey) return; // let "open in new tab" work
+        e.preventDefault();
+        open(i);
+      });
+    });
+    closeBtn.addEventListener('click', close);
+    prevBtn.addEventListener('click', function () { go(current - 1, true); });
+    nextBtn.addEventListener('click', function () { go(current + 1, true); });
+    // a tap on the dark area around a photo closes the viewer
+    track.addEventListener('click', function (e) { if (e.target.classList.contains('lb-slide')) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (box.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); go(current - 1, true); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); go(current + 1, true); }
+    });
+    // keep the same photo in view if the window is resized or the phone rotated
+    window.addEventListener('resize', function () { if (!box.hidden) track.scrollLeft = current * track.clientWidth; });
   }
 
   /* ---------- Hero background video ---------- */
@@ -243,7 +356,8 @@
   cursor();
   players();
   youtubeCards();
-  moreFilms();
+  showMore();
+  lightbox();
   heroVideo();
   autoplayClips();
   form();

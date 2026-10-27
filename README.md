@@ -18,6 +18,10 @@ python3 -m http.server 8000
 ```
 then open http://localhost:8000
 
+## Browser caching
+
+`index.html` loads `css/styles.css?v=YYYYMMDD` and `js/main.js?v=YYYYMMDD`. Bump the date whenever either file changes, so visitors' browsers fetch the new version instead of a saved copy.
+
 ## Adding media
 
 - **Images:** replace a `<div class="ph" ...></div>` placeholder with `<img src="assets/images/NAME.jpg" alt="...">`.
