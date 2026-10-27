@@ -22,8 +22,8 @@
   --paper-50: rgba(239,233,222,.5);
   --paper-40: rgba(239,233,222,.4);
 
-  --display: 'Saira Condensed', Archivo, sans-serif;
-  --body: Archivo, Helvetica, Arial, sans-serif;
+  --display: 'Saira Condensed', 'DM Sans', sans-serif;
+  --body: 'DM Sans', Helvetica, Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --ease: cubic-bezier(.2,.8,.2,1);
   --gutter: 28px;
