@@ -146,6 +146,21 @@
     });
   }
 
+  /* ---------- Menu: two-line button top-right opens a full-screen list of sections ---------- */
+  function menu() {
+    var btn = document.querySelector('.menu-btn'), nav = document.getElementById('menu');
+    if (!btn || !nav) return;
+    function set(open) {
+      nav.hidden = !open;
+      btn.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('menu-open', open);
+      if (open) { var first = nav.querySelector('a'); if (first) first.focus(); } else btn.focus();
+    }
+    btn.addEventListener('click', function () { set(nav.hidden); });
+    nav.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !nav.hidden) set(false); });
+  }
+
   /* ---------- "Show more" buttons (films, photos): only appear when their hidden list has items ---------- */
   function showMore() {
     document.querySelectorAll('.more-btn[aria-controls]').forEach(function (btn) {
@@ -353,7 +368,7 @@
 
   typeHeadings();
   reveals();
-  cursor();
+  menu();
   players();
   youtubeCards();
   showMore();

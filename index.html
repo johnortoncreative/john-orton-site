@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>John Orton — Film &amp; Photography, London</title>
   <meta name="description" content="John Orton is a London filmmaker and photographer. Commercial film, music video, documentary and stills for brands, agencies and musicians.">
-  <meta name="theme-color" content="#14120E">
+  <meta name="theme-color" content="#1c1c1c">
   <meta property="og:title" content="John Orton — Film &amp; Photography">
   <meta property="og:description" content="I make films and take pictures. Based in London, working wherever the job is.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
-  <link rel="stylesheet" href="https://use.typekit.net/nwr5zve.css"><!-- Adobe Fonts: Neulis Sans (header logo) -->
-  <link rel="stylesheet" href="https://use.typekit.net/vfs1sel.css"><!-- Adobe Fonts: Futura PT Bold (section headings) -->
-  <link rel="stylesheet" href="css/styles.css?v=20261027j">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=20261028a">
+  <!-- Redesign draft (Freytag Anderson-inspired): achromatic, full-bleed, one grotesk at 300/400 -->
+  <link rel="stylesheet" href="css/redesign.css?v=20261028a">
   <script>document.documentElement.classList.add('js');</script>
-  <script src="js/main.js?v=20261027j" defer></script>
+  <script src="js/main.js?v=20261028a" defer></script>
 </head>
 <body>
 
@@ -26,14 +25,15 @@
 
 <header class="site-header">
   <a href="#top" class="brand">John Orton</a>
-  <nav class="site-nav" aria-label="Main">
-    <a href="#reel">Reel</a>
-    <a href="#film">Film</a>
-    <a href="#photography">Stills</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
 </header>
+<nav class="menu" id="menu" aria-label="Main" hidden>
+  <a href="#about">About</a>
+  <a href="#reel">Showreel</a>
+  <a href="#film">Film</a>
+  <a href="#photography">Stills</a>
+  <a href="#contact">Contact</a>
+</nav>
 
 <main>
 
@@ -54,14 +54,16 @@
 </section>
 
 <!-- 3. ABOUT -->
-<section id="about" class="about section-pad">
-  <div class="about-grid wrap">
-    <div class="portrait" data-reveal><img src="assets/images/about-barbican.jpg" alt="John Orton in a denim jacket beneath the concrete walkways of the Barbican, London" width="1200" height="1500" loading="lazy" decoding="async"></div>
-    <div data-reveal>
-      <h2 class="h-about" data-type>About</h2>
-      <p class="lead">I’m John, a London-based videographer, photographer and editor with more than 12 years’ experience creating content that stands out.</p>
-      <p class="lead muted">My work spans fashion, music, sport and lifestyle. I’ve worked with brands and organisations including Topman, the Rugby Football Union (RFU) and Westminster City Council, with artists such as Maya Jane Coles, Marina &amp; the Diamonds and Kim Ann Foxman, and with well-known personalities including Big John Fisher, Jack Fincham and Gaz Beadle of Geordie Shore.</p>
-      <p class="lead muted">I love making bold, engaging videos and photos that grab attention and tell a story. I’m hands-on through the whole creative process, from the first shot to the final edit, whether I’m working solo behind the camera or as part of a larger crew.</p>
+<section id="about" class="about">
+  <div class="about-plane">
+    <img src="assets/images/about-barbican.jpg" alt="John Orton in a denim jacket beneath the concrete walkways of the Barbican, London" width="1200" height="1500" loading="lazy" decoding="async">
+    <p class="plane-statement">Videographer, photographer and editor. London.</p>
+  </div>
+  <div class="about-body">
+    <h2 class="display" data-reveal>I’m John, a London-based videographer, photographer and editor with more than 12 years’ experience creating content that stands out.</h2>
+    <div class="cols-3" data-reveal>
+      <p>My work spans fashion, music, sport and lifestyle. I’ve worked with brands and organisations including Topman, the Rugby Football Union (RFU) and Westminster City Council, with artists such as Maya Jane Coles, Marina &amp; the Diamonds and Kim Ann Foxman, and with well-known personalities including Big John Fisher, Jack Fincham and Gaz Beadle of Geordie Shore.</p>
+      <p>I love making bold, engaging videos and photos that grab attention and tell a story. I’m hands-on through the whole creative process, from the first shot to the final edit, whether I’m working solo behind the camera or as part of a larger crew.</p>
       <div class="stats">
         <div><div class="stat-val">12+</div><div class="stat-label mono">Years shooting</div></div>
         <div><div class="stat-val">London</div><div class="stat-label mono">In London, will travel</div></div>
