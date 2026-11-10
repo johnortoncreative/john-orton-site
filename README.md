@@ -25,6 +25,7 @@ then open http://localhost:8000
 ## Adding media
 
 - **Images:** replace a `<div class="ph" ...></div>` placeholder with `<img src="assets/images/NAME.jpg" alt="...">`.
+- **Hero:** `assets/videos/hero-loop-2026.mp4` for landscape screens, and `hero-loop-2026-mobile.mp4` for portrait (phones), where the skipping-rope clip (7.5–9s) is shifted right so she's centred in the narrow crop. A new hero cut needs both files remade.
 - **Showreel:** `assets/videos/showreel-2026.mp4` (with sound, plays on click), poster `assets/images/showreel-2026-poster-4k.jpg`. Use a new file name for a new cut so browsers don't serve the cached one (assets are cached for 7 days).
 - **Film card clips:** replace the card's placeholder with
   `<video src="assets/videos/NAME.mp4" poster="assets/images/NAME.jpg" muted playsinline loop preload="none" data-autoplay></video>`

@@ -42,6 +42,8 @@
   <!-- Full-screen background loop, silent. One 16:9 file for every screen; phones see the centre (object-fit: cover). -->
   <div class="hero-media">
     <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <!-- Phones (portrait) get a copy with the skipping-rope clip (7.5–9s) shifted right, so she sits centre in the narrow crop -->
+      <source src="assets/videos/hero-loop-2026-mobile.mp4" type="video/mp4" media="(orientation: portrait)">
       <source src="assets/videos/hero-loop-2026.mp4" type="video/mp4">
     </video>
   </div>
