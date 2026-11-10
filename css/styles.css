@@ -216,6 +216,7 @@ img, video { display: block; max-width: 100%; }
 /* YouTube cards: local thumbnail until Play, then the player loads in place */
 .film-media > iframe { border: 0; }
 .film-more { margin-top: 20px; }
+.film-more[hidden] { display: none; } /* .film-grid's display:grid would otherwise override the hidden attribute */
 .film-more .film-title { font-size: clamp(18px, 1.5vw, 22px); }
 /* Play button at the bottom instead of the middle, for thumbnails where a face sits in the centre */
 .pill-low .play-pill { top: auto; bottom: 7%; transform: translateX(-50%); }
