@@ -322,7 +322,7 @@ body.lb-open { overflow: hidden; }
   .stills-grid { grid-template-columns: repeat(2, 1fr); }
   .stills-more { columns: 2; }
   .film-grid { grid-template-columns: 1fr; gap: 28px; }
-  .span-5, .span-6, .span-7, .span-12 { grid-column: auto; }
+  .span-4, .span-5, .span-6, .span-7, .span-12 { grid-column: auto; }
   .r-21-9 { aspect-ratio: 3 / 2; }
 }
 
