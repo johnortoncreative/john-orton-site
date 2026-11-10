@@ -157,7 +157,11 @@
         more.hidden = !open;
         btn.setAttribute('aria-expanded', String(open));
         btn.textContent = btn.getAttribute(open ? 'data-less' : 'data-more');
-        if (open) more.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('revealed'); });
+        if (open) {
+          more.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('revealed'); });
+          // the new items open above the button, out of view: bring the first one on screen
+          more.firstElementChild.scrollIntoView({ block: 'center', behavior: reduceMotion ? 'auto' : 'smooth' });
+        }
         else btn.closest('section').scrollIntoView({ block: 'start' });
       });
     });

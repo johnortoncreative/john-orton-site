@@ -15,9 +15,9 @@
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/nwr5zve.css"><!-- Adobe Fonts: Neulis Sans (header logo) -->
   <link rel="stylesheet" href="https://use.typekit.net/vfs1sel.css"><!-- Adobe Fonts: Futura PT Bold (section headings) -->
-  <link rel="stylesheet" href="css/styles.css?v=20261027j">
+  <link rel="stylesheet" href="css/styles.css?v=20261110b">
   <script>document.documentElement.classList.add('js');</script>
-  <script src="js/main.js?v=20261027j" defer></script>
+  <script src="js/main.js?v=20261110b" defer></script>
 </head>
 <body>
 
@@ -42,6 +42,8 @@
   <!-- Full-screen background loop, silent. One 16:9 file for every screen; phones see the centre (object-fit: cover). -->
   <div class="hero-media">
     <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <!-- Phones (portrait) get a copy with the skipping-rope clip (7.5–9s) shifted right, so she sits centre in the narrow crop -->
+      <source src="assets/videos/hero-loop-2026-mobile.mp4" type="video/mp4" media="(orientation: portrait)">
       <source src="assets/videos/hero-loop-2026.mp4" type="video/mp4">
     </video>
   </div>
@@ -91,7 +93,7 @@
       <h2 class="h-big" data-type>Showreel</h2>
     </div>
     <div class="player" data-reveal>
-      <video class="reel-video" muted playsinline preload="none" poster="assets/images/showreel-2026-poster.jpg">
+      <video class="reel-video" muted playsinline preload="none" poster="assets/images/showreel-2026-poster-4k.jpg">
         <source src="assets/videos/showreel-2026.mp4" type="video/mp4">
       </video>
       <button class="play-pill mono" type="button"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play reel</span></button>
@@ -147,6 +149,15 @@
         <div class="film-cap"><div class="film-title">Their Stories: Life After Violence and Abuse</div></div>
       </div>
       <div class="film-card span-12" data-reveal>
+        <div class="film-media r-16-9 yt pill-low" data-yt="e3U0nYITyKA">
+          <img src="assets/images/film-yield.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Yield | Your 360° Wellness Toolkit"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        </div>
+        <div class="film-cap"><div class="film-title">Yield | Your 360° Wellness Toolkit</div></div>
+      </div>
+    </div>
+    <div class="film-grid film-more" id="film-more" hidden>
+      <div class="film-card span-12" data-reveal>
         <div class="film-media r-16-9 yt" data-yt="ZnfO6LvfSUQ">
           <img src="assets/images/film-ford-mustang.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
           <button class="play-pill mono" type="button" aria-label="Play Ford Mustang Montage"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
@@ -154,7 +165,6 @@
         <div class="film-cap"><div class="film-title">Ford Mustang Montage</div></div>
       </div>
     </div>
-    <div class="film-grid film-more" id="film-more" hidden></div>
     <button class="more-btn mono" type="button" aria-controls="film-more" aria-expanded="false" data-more="Show more films" data-less="Show fewer films" hidden>Show more films</button>
   </div>
 </section>

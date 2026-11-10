@@ -27,6 +27,7 @@
   --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --ease: cubic-bezier(.2,.8,.2,1);
   --gutter: 28px;
+  --side: clamp(28px, 7vw, 120px); /* section side margins: wider than the header so media sits in from the edges */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -47,7 +48,7 @@ input, textarea, button { font-family: inherit; }
 img, video { display: block; max-width: 100%; }
 
 .mono { font-family: var(--mono); }
-.wrap { max-width: 1400px; margin-left: auto; margin-right: auto; }
+.wrap { max-width: 1200px; margin-left: auto; margin-right: auto; }
 .dark { background: var(--night); color: var(--paper); }
 
 /* Media: placeholders + real images/videos fill their box */
@@ -123,7 +124,7 @@ img, video { display: block; max-width: 100%; }
 .scroll-hint { font-size: 11px; letter-spacing: .02em; opacity: .72; animation: bob 2.4s ease-in-out infinite; }
 
 /* Shared headings */
-.section-pad { padding: 110px var(--gutter); }
+.section-pad { padding: 110px var(--side); }
 .section-head {
   display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
   gap: 20px; margin-bottom: 32px;
@@ -146,6 +147,11 @@ img, video { display: block; max-width: 100%; }
   gap: 56px; align-items: start;
 }
 .portrait { position: relative; aspect-ratio: 4 / 5; background: var(--placeholder); overflow: hidden; }
+/* Side by side: the photo stretches to the height of the text column instead of a fixed 4:5 */
+@media (min-width: 861px) {
+  .about-grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
+  .portrait { aspect-ratio: auto; }
+}
 .lead { margin: 0 0 22px; font-size: 17px; line-height: 1.65; max-width: 56ch; text-wrap: pretty; }
 .lead.muted { color: var(--ink-72); margin-bottom: 34px; }
 .stats {
@@ -160,7 +166,7 @@ img, video { display: block; max-width: 100%; }
   padding: 56px 0 64px; overflow: hidden;
   border-top: 1px solid var(--rule-14); border-bottom: 1px solid var(--rule-14);
 }
-.clients-label { margin-bottom: 28px; padding: 0 var(--gutter); font-size: 11px; color: var(--ink-55); }
+.clients-label { margin-bottom: 28px; padding: 0 var(--side); font-size: 11px; color: var(--ink-55); }
 .marquee { display: flex; width: max-content; animation: marquee 34s linear infinite; }
 .marquee-row {
   display: flex; gap: 40px; padding-right: 40px;
@@ -170,7 +176,7 @@ img, video { display: block; max-width: 100%; }
 .marquee-row i { font-style: normal; color: var(--accent); }
 
 /* 5. Showreel */
-.reel { padding: 96px var(--gutter) 110px; }
+.reel { padding: 96px var(--side) 110px; }
 .player { position: relative; aspect-ratio: 16 / 9; width: 100%; overflow: hidden; background: var(--night-deep); }
 .player > video { background: var(--night-deep); }
 .play-pill {
@@ -188,7 +194,7 @@ img, video { display: block; max-width: 100%; }
 .player.is-playing .play-pill { display: none; }
 
 /* 6. Film */
-.film { padding: 110px var(--gutter) 40px; }
+.film { padding: 110px var(--side) 40px; }
 .film-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
 .film-card { display: block; transition: opacity 200ms; }
 .film-card:hover { opacity: .88; color: inherit; }
@@ -210,6 +216,7 @@ img, video { display: block; max-width: 100%; }
 /* YouTube cards: local thumbnail until Play, then the player loads in place */
 .film-media > iframe { border: 0; }
 .film-more { margin-top: 20px; }
+.film-more[hidden] { display: none; } /* .film-grid's display:grid would otherwise override the hidden attribute */
 .film-more .film-title { font-size: clamp(18px, 1.5vw, 22px); }
 /* Play button at the bottom instead of the middle, for thumbnails where a face sits in the centre */
 .pill-low .play-pill { top: auto; bottom: 7%; transform: translateX(-50%); }
@@ -222,7 +229,7 @@ img, video { display: block; max-width: 100%; }
 .more-btn[hidden] { display: none; }
 
 /* 7. Stills */
-.stills { padding: 100px var(--gutter) 110px; }
+.stills { padding: 100px var(--side) 110px; }
 .still { display: block; position: relative; overflow: hidden; background: var(--placeholder); cursor: zoom-in; }
 .still > img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--ease); }
 .still:hover > img { transform: scale(1.03); }
@@ -264,7 +271,7 @@ img, video { display: block; max-width: 100%; }
 body.lb-open { overflow: hidden; }
 
 /* 9. Contact */
-.contact { padding: 110px var(--gutter) 90px; }
+.contact { padding: 110px var(--side) 90px; }
 .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 56px; }
 .contact-links { display: grid; gap: 18px; font-size: 15px; justify-items: start; }
 .contact-email {
@@ -320,7 +327,7 @@ body.lb-open { overflow: hidden; }
 }
 
 @media (max-width: 640px) {
-  :root { --gutter: 18px; }
+  :root { --gutter: 18px; --side: 22px; }
   .site-header { padding: 14px var(--gutter); gap: 12px; }
   .brand { font-size: 17px; }
   .site-nav { gap: 12px; font-size: 11px; letter-spacing: .02em; }
@@ -333,15 +340,15 @@ body.lb-open { overflow: hidden; }
   .about.section-pad { padding-bottom: 24px; }
   .clients { padding: 22px 0 24px; }
   .clients-label { margin-bottom: 8px; }
-  .reel { padding: 72px var(--gutter) 80px; }
-  .stills { padding: 72px var(--gutter) 80px; }
+  .reel { padding: 72px var(--side) 80px; }
+  .stills { padding: 72px var(--side) 80px; }
   .about-grid, .contact-grid { gap: 40px; }
 
   .stat-val { font-size: 28px; }
   /* Stats sit centred between two full-width rules (the lower one is the Clients border) */
   .stats {
-    grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 24px var(--gutter) 0;
-    margin: 0 calc(-1 * var(--gutter));
+    grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 24px var(--side) 0;
+    margin: 0 calc(-1 * var(--side));
   }
   .stat-label { margin-top: 4px; }
 
