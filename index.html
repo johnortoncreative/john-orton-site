@@ -15,9 +15,9 @@
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/nwr5zve.css"><!-- Adobe Fonts: Neulis Sans (header logo) -->
   <link rel="stylesheet" href="https://use.typekit.net/vfs1sel.css"><!-- Adobe Fonts: Futura PT Bold (section headings) -->
-  <link rel="stylesheet" href="css/styles.css?v=20261110c">
+  <link rel="stylesheet" href="css/styles.css?v=20261113b">
   <script>document.documentElement.classList.add('js');</script>
-  <script src="js/main.js?v=20261110c" defer></script>
+  <script src="js/main.js?v=20261113b" defer></script>
 </head>
 <body>
 
@@ -110,7 +110,7 @@
     <!-- Films are YouTube videos (works for public and unlisted). Each card shows a local thumbnail and only loads
          the YouTube player when Play is pressed. To add one: copy a card, set data-yt to the video ID and save its
          thumbnail as assets/images/film-NAME.jpg (https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg).
-         Featured films go in .film-grid; extra films go in .film-more (use span-4) and the "Show more films"
+         Featured films go in .film-grid; extra films go in .film-more (use span-6) and the "Show more films"
          button appears automatically. -->
     <div class="film-grid">
       <div class="film-card span-12" data-reveal>
@@ -157,49 +157,56 @@
       </div>
     </div>
     <div class="film-grid film-more" id="film-more" hidden>
-      <div class="film-card span-12" data-reveal>
+      <div class="film-card span-6" data-reveal>
+        <div class="film-media r-16-9 yt" data-yt="w0Iqld6_Ok8">
+          <img src="assets/images/film-graffiti-asmr.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Spray, Scrub, Gone! | Graffiti Cleaning ASMR"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        </div>
+        <div class="film-cap"><div class="film-title">Spray, Scrub, Gone! | Graffiti Cleaning ASMR</div></div>
+      </div>
+      <div class="film-card span-6" data-reveal>
         <div class="film-media r-16-9 yt" data-yt="ZnfO6LvfSUQ">
           <img src="assets/images/film-ford-mustang.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
           <button class="play-pill mono" type="button" aria-label="Play Ford Mustang Montage"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
         </div>
         <div class="film-cap"><div class="film-title">Ford Mustang Montage</div></div>
       </div>
-      <div class="film-card span-4" data-reveal>
+      <div class="film-card span-6" data-reveal>
         <div class="film-media r-16-9 yt" data-yt="u0bPKw6Xgxs">
           <img src="assets/images/film-marina-wedding-bells.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
           <button class="play-pill mono" type="button" aria-label="Play Marina &amp; the Diamonds – Behind the Wedding Bells"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
         </div>
         <div class="film-cap"><div class="film-title">Marina &amp; the Diamonds – Behind the Wedding Bells</div></div>
       </div>
-      <div class="film-card span-4" data-reveal>
+      <div class="film-card span-6" data-reveal>
         <div class="film-media r-16-9 yt pill-low" data-yt="FRgxBTmOsXQ">
           <img src="assets/images/film-fathers-story.jpg" alt="" width="1600" height="900" loading="lazy" decoding="async">
           <button class="play-pill mono" type="button" aria-label="Play A Father&#x27;s Story of Love, Loss and Hope"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
         </div>
         <div class="film-cap"><div class="film-title">A Father&#x27;s Story of Love, Loss and Hope</div></div>
       </div>
-      <div class="film-card span-4" data-reveal>
+      <div class="film-card span-6" data-reveal>
         <div class="film-media r-16-9 yt" data-yt="CTuVoidBtjg">
           <img src="assets/images/film-st-johns-garden.jpg" alt="" width="3200" height="1800" loading="lazy" decoding="async">
           <button class="play-pill mono" type="button" aria-label="Play From Car Park to Community Garden | How St John’s Went Green"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
         </div>
         <div class="film-cap"><div class="film-title">From Car Park to Community Garden | How St John’s Went Green</div></div>
       </div>
-      <div class="film-card span-4" data-reveal>
+      <div class="film-card span-6" data-reveal>
         <div class="film-media r-16-9 yt" data-yt="uPANqTPDPMs">
           <img src="assets/images/film-piccadilly-lights.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
           <button class="play-pill mono" type="button" aria-label="Play Piccadilly Lights Displaying Art Made by Survivors of Modern Slavery"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
         </div>
         <div class="film-cap"><div class="film-title">Piccadilly Lights Displaying Art Made by Survivors of Modern Slavery</div></div>
       </div>
-      <div class="film-card span-4" data-reveal>
+      <div class="film-card span-6" data-reveal>
         <div class="film-media r-16-9 yt pill-low" data-yt="AK3KI1FpWjM">
           <img src="assets/images/film-anti-pee-paint.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
           <button class="play-pill mono" type="button" aria-label="Play ‘Don&#x27;t Pee Off Soho’ – Anti-Pee Paint"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
         </div>
         <div class="film-cap"><div class="film-title">‘Don&#x27;t Pee Off Soho’ – Anti-Pee Paint</div></div>
       </div>
-      <div class="film-card span-4" data-reveal>
+      <div class="film-card span-6" data-reveal>
         <div class="film-media r-16-9 yt pill-low" data-yt="9-JBv0ejvxw">
           <img src="assets/images/film-strand-aldwych.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
           <button class="play-pill mono" type="button" aria-label="Play An Urban Sanctuary | Strand Aldwych"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
@@ -208,6 +215,7 @@
       </div>
     </div>
     <button class="more-btn mono" type="button" aria-controls="film-more" aria-expanded="false" data-more="Show more films" data-less="Show fewer films" hidden>Show more films</button>
+    </div>
   </div>
 </section>
 
