@@ -167,7 +167,7 @@ img, video { display: block; max-width: 100%; }
   border-top: 1px solid var(--rule-14); border-bottom: 1px solid var(--rule-14);
 }
 .clients-label { margin-bottom: 28px; padding: 0 var(--side); font-size: 11px; color: var(--ink-55); }
-.marquee { display: flex; width: max-content; animation: marquee 34s linear infinite; }
+.marquee { display: flex; width: max-content; animation: marquee 38s linear infinite; /* longer list, same scrolling pace */ }
 .marquee-row {
   display: flex; gap: 40px; padding-right: 40px;
   font-family: futura-pt-bold, var(--display); font-weight: 700; font-size: clamp(28px, 4vw, 62px);
