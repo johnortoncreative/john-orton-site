@@ -24,9 +24,9 @@
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
   <link rel="stylesheet" href="https://use.typekit.net/nwr5zve.css"><!-- Adobe Fonts: Neulis Sans (header logo) -->
   <link rel="stylesheet" href="https://use.typekit.net/vfs1sel.css"><!-- Adobe Fonts: Futura PT Bold (section headings) -->
-  <link rel="stylesheet" href="css/styles.css?v=20261115a">
+  <link rel="stylesheet" href="css/styles.css?v=20261116b">
   <script>document.documentElement.classList.add('js');</script>
-  <script src="js/main.js?v=20261115a" defer></script>
+  <script src="js/main.js?v=20261116b" defer></script>
 </head>
 <body>
 
@@ -119,7 +119,7 @@
     <!-- Films are YouTube videos (works for public and unlisted). Each card shows a local thumbnail and only loads
          the YouTube player when Play is pressed. To add one: copy a card, set data-yt to the video ID and save its
          thumbnail as assets/images/film-NAME.jpg (https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg).
-         Featured films go in .film-grid; extra films go in .film-more (use span-6) and the "Show more films"
+         Featured films go in .film-grid; extra films go in .film-more (use span-6; if the count is odd, make the last one span-12) and the "Show more films"
          button appears automatically. -->
     <div class="film-grid">
       <div class="film-card span-12" data-reveal>
@@ -151,11 +151,11 @@
         <div class="film-cap"><div class="film-title">Notting Hill Carnival | London&#x27;s Biggest Street Party</div></div>
       </div>
       <div class="film-card span-6" data-reveal>
-        <div class="film-media r-16-9 yt" data-yt="cICFgF0Q7DQ">
-          <img src="assets/images/film-their-stories.jpg" alt="" width="937" height="527" loading="lazy" decoding="async">
-          <button class="play-pill mono" type="button" aria-label="Play Their Stories: Life After Violence and Abuse"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        <div class="film-media r-16-9 yt" data-yt="u0bPKw6Xgxs">
+          <img src="assets/images/film-marina-wedding-bells.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Marina &amp; the Diamonds – Behind the Wedding Bells"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
         </div>
-        <div class="film-cap"><div class="film-title">Their Stories: Life After Violence and Abuse</div></div>
+        <div class="film-cap"><div class="film-title">Marina &amp; the Diamonds – Behind the Wedding Bells</div></div>
       </div>
       <div class="film-card span-12" data-reveal>
         <div class="film-media r-16-9 yt pill-low" data-yt="e3U0nYITyKA">
@@ -174,6 +174,13 @@
         <div class="film-cap"><div class="film-title">Spray, Scrub, Gone! | Graffiti Cleaning ASMR</div></div>
       </div>
       <div class="film-card span-6" data-reveal>
+        <div class="film-media r-16-9 yt" data-yt="safinjIuPWY">
+          <img src="assets/images/film-absolute-collagen.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Absolute Collagen | Father’s Day Commercial"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        </div>
+        <div class="film-cap"><div class="film-title">Absolute Collagen | Father’s Day Commercial</div></div>
+      </div>
+      <div class="film-card span-6" data-reveal>
         <div class="film-media r-16-9 yt" data-yt="ZnfO6LvfSUQ">
           <img src="assets/images/film-ford-mustang.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
           <button class="play-pill mono" type="button" aria-label="Play Ford Mustang Montage"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
@@ -181,11 +188,11 @@
         <div class="film-cap"><div class="film-title">Ford Mustang Montage</div></div>
       </div>
       <div class="film-card span-6" data-reveal>
-        <div class="film-media r-16-9 yt" data-yt="u0bPKw6Xgxs">
-          <img src="assets/images/film-marina-wedding-bells.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
-          <button class="play-pill mono" type="button" aria-label="Play Marina &amp; the Diamonds – Behind the Wedding Bells"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
+        <div class="film-media r-16-9 yt" data-yt="cICFgF0Q7DQ">
+          <img src="assets/images/film-their-stories.jpg" alt="" width="937" height="527" loading="lazy" decoding="async">
+          <button class="play-pill mono" type="button" aria-label="Play Their Stories: Life After Violence and Abuse"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
         </div>
-        <div class="film-cap"><div class="film-title">Marina &amp; the Diamonds – Behind the Wedding Bells</div></div>
+        <div class="film-cap"><div class="film-title">Their Stories: Life After Violence and Abuse</div></div>
       </div>
       <div class="film-card span-6" data-reveal>
         <div class="film-media r-16-9 yt pill-low" data-yt="FRgxBTmOsXQ">
@@ -215,7 +222,7 @@
         </div>
         <div class="film-cap"><div class="film-title">‘Don&#x27;t Pee Off Soho’ – Anti-Pee Paint</div></div>
       </div>
-      <div class="film-card span-6" data-reveal>
+      <div class="film-card span-12" data-reveal>
         <div class="film-media r-16-9 yt pill-low" data-yt="9-JBv0ejvxw">
           <img src="assets/images/film-strand-aldwych.jpg" alt="" width="1920" height="1080" loading="lazy" decoding="async">
           <button class="play-pill mono" type="button" aria-label="Play An Urban Sanctuary | Strand Aldwych"><span class="play-tri" aria-hidden="true"></span><span class="play-label">Play film</span></button>
